@@ -135,4 +135,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# dotenv environment variable files
+uploads/
 .env
