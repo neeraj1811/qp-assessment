@@ -35,6 +35,13 @@ Create a `.env` file and add:
 ```
 PORT=3000
 MONGODB_URI=your_mongodb_connection_string of your database
+DB_NAME_DEV= grocery_booking_db
+DB_MIN_POOL_SIZE_DEV=2
+DB_MAX_POOL_SIZE_DEV=10
+DB_USERNAME_DEV=yourusername
+DB_PASSWORD_DEV= yourpassword
+DB_HOST_DEV= cluser host
+
 ```
 
 4. Start the server:
