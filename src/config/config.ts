@@ -6,7 +6,8 @@ dotenv.config();
 const db:any = {};
 console.log("Env", environment)
 
-if (environment == 'uat') {
+if (environment.trim() == 'uat') {
+  console.log("UAT")
   db["minPoolSize"] = process.env.DB_MIN_POOL_SIZE_UAT;
   db["maxPoolSize"] = process.env.DB_MAX_POOL_SIZE_UAT;
   db["dbURI"] = `mongodb+srv://${process.env.DB_USERNAME_UAT

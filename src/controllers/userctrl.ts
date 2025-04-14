@@ -7,7 +7,7 @@ import Order from '../models/order';
 // POST /orders - Place an order with a session
 const placeOrder = async (req: Request, res: Response) => {
   const session = await mongoose.startSession();
-  session.startTransaction();
+  session.startTransaction()
 
   try {
     const { items } = req.body;
@@ -21,7 +21,6 @@ const placeOrder = async (req: Request, res: Response) => {
 
     let totalAmount = 0;
     const orderItems = [];
-
     for (const item of items) {
       const groceryItem = await GroceryItem.findById(item.itemId).session(session);
 
@@ -38,6 +37,7 @@ const placeOrder = async (req: Request, res: Response) => {
           error: `Insufficient stock for item: ${groceryItem.itemName}`
         });
       }
+     
         // Update the grocery item's quantity
       groceryItem.quantity -= item.quantity;
       await groceryItem.save({ session });
@@ -66,7 +66,7 @@ const placeOrder = async (req: Request, res: Response) => {
   } catch (error) {
     await session.abortTransaction();
     session.endSession();
-    console.error('Transaction failed:', error);
+    console.log('Transaction failed:', error);
     res.status(500).json({ error: 'Failed to place order' });
   }
 };
@@ -76,7 +76,7 @@ const placeOrder = async (req: Request, res: Response) => {
 const getAllOrders = async (req: Request, res: Response) => {
   const userId= req.params.userId; // Assuming userId is passed as a query parameter
   try {
-    const orders = await Order.find({ userId }).populate('items.itemId', 'itemName price quantity image');
+    const orders = await Order.find({ userId }).populate('items.itemId', 'itemName price');
     if (!orders || orders.length === 0) {
         return res.status(404).json({ message: 'No orders found for this user' });
     }
