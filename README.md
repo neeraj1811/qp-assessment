@@ -20,17 +20,12 @@ A Node.js REST API for managing grocery items and orders.
 
 ## Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/grocery-booking-api.git
-```
-
-2. Install dependencies:
+1. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Set up environment variables:
+2. Set up environment variables:
 Create a `.env` file and add:
 ```
 PORT=3000
