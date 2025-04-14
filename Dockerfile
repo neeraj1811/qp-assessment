@@ -24,4 +24,4 @@ EXPOSE 3000
 # npm run start_uat
 
 # Start the application using npm start
-CMD ["npm","run" ,"start_uat"]
+CMD ["npm","start"]

@@ -39,11 +39,8 @@ MONGODB_URI=your_mongodb_connection_string of your database
 
 4. Start the server:
 ```bash
-# For development environment (using local MongoDB) for mongoose transaction you need to set up replica set of local mongodb
+# For DEV environment (using MongoDB Atlas)
 npm start
-
-# For UAT environment (using MongoDB Atlas)
-npm run start_uat
 ```
 
 ## API Documentation
