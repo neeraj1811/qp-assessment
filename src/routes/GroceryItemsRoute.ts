@@ -253,8 +253,7 @@ router.patch('/v1/admin/patch-items/:id', adminctrl.updateInventory);
  *                   type: number
  *                 items:
  *                   type: array
- *                   items:
- *                     $ref: '#/components/schemas/GroceryItem'
+
  */
 
 router.get('/v1/admin/get-items', adminctrl.getAvailableGroceryItems);

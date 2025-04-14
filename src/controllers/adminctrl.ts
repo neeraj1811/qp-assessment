@@ -79,12 +79,12 @@ const deleteGroceryItem = async (req: Request, res: Response) => {
 // Function to update grocery-items
 const updateGroceryItem = async (req: Request, res: Response) => {
   try {
-    const { name, price} = req.body;
-    const image = req.file?.filename; // multer adds this to req
+   const updatedata = req.body;
+    updatedata.image = req.file?.filename; // multer adds this to req
 
     const updatedItem = await GroceryItem.findByIdAndUpdate(
       req.params.id,
-      { name, price, image },
+      updatedata,
       { new: true }
     );
     if (!updatedItem) {
