@@ -6,7 +6,6 @@ import db from './config';
 const dbURI = db["dbURI"];
 console.log(db, "DB connection")
 
-// const dbURI = `mongodb://0.0.0.0:27017/test-emp1st`;
 const options = {
   autoIndex: true,
   minPoolSize: db["minPoolSize"], // Maintain up to x socket connections
