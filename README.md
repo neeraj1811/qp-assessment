@@ -8,6 +8,7 @@ A Node.js REST API for managing grocery items and orders.
 - User functionality for viewing and ordering groceries
 - CRUD operations for grocery items
 - Order management system
+- API documentation with Swagger UI
 
 ## Tech Stack
 
@@ -15,6 +16,7 @@ A Node.js REST API for managing grocery items and orders.
 - Express.js
 - MongoDB
 - Docker
+- Swagger UI
 
 ## Installation
 
@@ -37,12 +39,20 @@ MONGODB_URI=your_mongodb_connection_string of your database
 
 4. Start the server:
 ```bash
-# For development environment (using local MongoDB)
+# For development environment (using local MongoDB) for mongoose transaction you need to set up replica set of local mongodb
 npm start
 
 # For UAT environment (using MongoDB Atlas)
 npm run start_uat
 ```
+
+## API Documentation
+
+API documentation is available through Swagger UI at:
+```
+http://localhost:3030/api-docs
+```
+
 ## API Endpoints
 
 ### Authentication (Not implemented yet - Will be added with JWT/OAuth)
